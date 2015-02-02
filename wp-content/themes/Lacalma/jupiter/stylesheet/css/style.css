@@ -1,0 +1,46 @@
+div.theme-content {
+	float: none;
+}
+@media(min-width: 768px){
+	div.post > img.image_post{
+		width: 30%;
+		height: 200px;
+		float: left;
+	}
+	div.post > div.content{
+		width: 68%;
+		float: right;
+		margin-left: 2%;
+	}
+	div.post{
+		clear: both;
+		display: flex;
+	}
+}
+hr.end_post{
+	width: 0px;
+	clear: both;
+	margin-bottom: 15px;
+}
+a.left.carousel-control,a.right.carousel-control {
+	background-color: transparent;
+	border: 0px;
+}
+i.fa.fa-angle-left {
+	background-color: black;
+	border-radius: 200px;
+	float: left;
+}
+i.fa.fa-angle-right {
+	background-color: black;
+	border-radius: 200px;
+	float: right;	
+}
+div.carousel-caption > h3 {
+	color: wheat!important;
+}
+div.carousel-inner > div > img{
+	height: 400px;
+	width: 100%;
+
+}
