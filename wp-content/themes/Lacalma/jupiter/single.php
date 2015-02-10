@@ -328,6 +328,9 @@ get_header(); ?>
 			</div>
 				<?php endwhile; ?>
 			<?php  if($single_layout != 'full') get_sidebar();  ?>
+			<?php
+				get_sidebar(); 
+			?>	
 			<div class="clearboth"></div>
 		</div>
 	</div>

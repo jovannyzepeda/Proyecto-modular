@@ -19,7 +19,7 @@ get_header(); ?>
 	?>
 			</div>
 
-		<?php if ( $page_layout != 'full' ) get_sidebar(); ?>
+		<?php  get_sidebar(); ?>
 		<div class="clearboth"></div>
 		</div>
 	</div>	

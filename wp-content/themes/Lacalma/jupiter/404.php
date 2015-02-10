@@ -25,6 +25,9 @@ $page_layout = !empty($mk_options['notfound_layout']) ? $mk_options['notfound_la
 			</div>
 			<?php if ( $page_layout != 'full' ) get_sidebar(); ?>
 		<div class="clearboth"></div>
+			<?php
+				get_sidebar(); 
+			?>	
 		</div>
 	</div>	
 </div>

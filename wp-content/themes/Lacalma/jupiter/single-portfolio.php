@@ -116,7 +116,7 @@ if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 	<div class="clearboth"></div>
 	</div>
 	<?php endwhile; ?>
-	<?php  if ( $single_layout != 'full' ) get_sidebar();  ?>
+	<?php  get_sidebar();  ?>
 	<div class="clearboth"></div>
 	</div>
 	</div>

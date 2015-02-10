@@ -255,6 +255,8 @@ class Theme
     
 }
 /*fuciones personalizadas*/
+add_filter('show_admin_bar', '__return_false');
+
 function recupera_post_attachments($post_id){
     $args = array( 
                 'post_type'   => 'attachment',
@@ -263,6 +265,12 @@ function recupera_post_attachments($post_id){
                 );
     $attachments = get_posts($args);
     return($attachments[0]->guid);
+}
+function recupera_imagen_destacada($post_id){
+    $size = 'full';
+    $img  = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), $size);
+    $path = $img[0];
+    return $path;
 }
 function recupera_post($post_type,$number_post){
     $args = array(
@@ -274,5 +282,50 @@ function recupera_post($post_type,$number_post){
                 );
     $posts = get_posts($args);
     return($posts);
+}
+function recupera_autor($id){
+    global $wpdb;
+        $consulta  = "SELECT * FROM wp_users WHERE ID = $id";
+        $resultado = $wpdb->get_results( $consulta );
+        return $resultado;
+}
+function recupera_comentarios($id){
+    global $wpdb;
+        $consulta  = "SELECT * FROM wp_comments WHERE comment_post_ID = $id";
+        $resultado = $wpdb->get_results( $consulta );
+        return $resultado;
+}
+
+ /**
+     * @author jovanny zepeda <jovanny.zepeda@cor.mx>
+     * @param $message -> parte de la informacion que debe de tener la data del formulario ninja forms
+     *                 busca el id de un formulario donde la informacion data tiene algo del mensaje like
+     **/
+function recupera_formulario_pagina($message){
+    global $servicio, $wpdb;
+    $consulta = "SELECT id FROM wp_ninja_forms WHERE data like '%$message%'";
+    $resultado = $wpdb->get_results($consulta);
+    $value = $resultado[0]->id;
+    return $value;
+}
+
+function recupera_tel_post($id){
+    global $wpdb , $consulta;
+    $consulta  = "SELECT meta_value FROM wp_postmeta WHERE meta_key = 'wpcf-tel' AND post_id = $id";
+    $resultado = $wpdb->get_results( $consulta );
+    $total = count($resultado);
+    if($total==1){
+        echo $resultado[0]->meta_value;
+    }
+    else{
+        for($x=0;$x<$total;$x++){
+            if($x<$total-2)
+                echo $resultado[$x]->meta_value.", ";
+            if($x<$total-1)
+                echo $resultado[$x]->meta_value;
+            else
+                echo " y ".$resultado[$x]->meta_value.".";
+        }
+    }
 }
 ?>

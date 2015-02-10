@@ -235,7 +235,6 @@ do_action('header_banner_video');
 *************************************************************/
 if($toolbar_toggle == 'true' && $header_style != 4) : ?>
     <div class="mk-header-toolbar">
-      
       <?php 
         echo $header_grid_start;
 
@@ -252,6 +251,9 @@ if($toolbar_toggle == 'true' && $header_style != 4) : ?>
         do_action('theme_wpml_language_switch');    
 
         do_action('header_search', 'toolbar'); 
+        ?>
+        <a href="<?php echo WC()->cart->get_cart_url(); ?>" class="logo_carro"><i class="mk-moon-cart-plus"></i></a>
+        <?php
 
         do_action('header_social', 'toolbar');
 
@@ -263,6 +265,7 @@ if($toolbar_toggle == 'true' && $header_style != 4) : ?>
         do_action('header_toolbar_after'); // to add elements using child themes
 
         echo $header_grid_end;
+
        ?>
     <div class="clearboth"></div>
   </div>

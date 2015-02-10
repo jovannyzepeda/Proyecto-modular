@@ -256,6 +256,7 @@ if ( has_post_thumbnail() ) {
 				echo '<div class="product-item-desc">' . apply_filters( 'woocommerce_short_description', $post->post_excerpt ) . '</div>'; 
 			endif;
 			?>
+			<?php do_action( 'woocommerce_' . $product->product_type . '_add_to_cart'  ); ?>
 		</div>
 
 

@@ -151,8 +151,7 @@ $comment = get_comment( $comment_id );
  */
 do_action( 'set_comment_cookies', $comment, $user );
 
-$location = empty($_POST['redirect_to']) ? get_comment_link($comment_id) : $_POST['redirect_to'] . '#comment-' . $comment_id;
-
+$dir = $_POST['url'];
 /**
  * Filter the location URI to send the commenter after posting.
  *
@@ -161,7 +160,7 @@ $location = empty($_POST['redirect_to']) ? get_comment_link($comment_id) : $_POS
  * @param string $location The 'redirect_to' URI sent via $_POST.
  * @param object $comment  Comment object.
  */
-$location = apply_filters( 'comment_post_redirect', $location, $comment );
+$location = apply_filters( 'comment_post_redirect', $dir );
 
 wp_safe_redirect( $location );
 exit;

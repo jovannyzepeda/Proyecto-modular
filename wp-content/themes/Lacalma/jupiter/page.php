@@ -29,6 +29,9 @@ get_header(); ?>
 		<?php if ( $page_layout != 'full' ) get_sidebar(); ?>
 		<div class="clearboth"></div>
 		</div>
+		<?php
+			get_sidebar(); 
+		?>	
 		<div class="clearboth"></div>
 	</div>	
 </div>

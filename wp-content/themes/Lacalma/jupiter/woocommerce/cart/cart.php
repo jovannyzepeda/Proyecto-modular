@@ -121,6 +121,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 					</div>
 				<?php } ?>
+				<div class="clearboth"></div>
 
 				<input type="submit" class="shop-flat-btn shop-black-btn" name="update_cart" value="<?php _e( 'Update Cart', 'mk_framework' ); ?>" /> <input type="submit" class="checkout-button shop-flat-btn shop-skin-btn wc-forward" name="proceed" value="<?php _e( 'Proceed to Checkout', 'mk_framework' ); ?>" />
 

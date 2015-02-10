@@ -111,7 +111,7 @@ global $post, $product, $mk_options;
 			<?php echo $product->get_categories( ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:', $cat_count, 'mk_framework' ) . ' ', '.</span>' ); ?>
 
 			<?php echo $product->get_tags( ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', $tag_count, 'mk_framework' ) . ' ', '.</span>' ); ?>
-
+<?php do_action( 'woocommerce_' . $product->product_type . '_add_to_cart'  ); ?>
 			<?php do_action( 'woocommerce_product_meta_end' ); ?>
 
 		</div>
