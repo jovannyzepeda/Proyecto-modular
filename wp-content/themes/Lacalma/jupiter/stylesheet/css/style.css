@@ -6,12 +6,25 @@ div.theme-content {
 	background-color: white;
 }
 /*index*/
+div.amores{
+	float: right;
+	padding: 1%;
+}
+div.informacion > img {
+	height: 220px;
+}
+div.amor > h4{
+	margin-bottom: 15px;
+}
 @media(min-width: 768px){
 	div.post > a > img.image_post{
 		width: 80%;
 		height: 200px;
 		float: left;
 		margin-left: 10%;
+	}
+	div.amores{
+		width: 26%;
 	}
 	div.post > a > div.content{
 		width: 92%;
@@ -164,6 +177,7 @@ div.filtro{
 	background-color: rgba(255, 255, 255, 0.8);
 	height: 100%;
 	width: 100%;
+	padding: 5px!important;
 }
 form.ninja-forms-form > div > div > input,
 form.ninja-forms-form > div > div > textarea

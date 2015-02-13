@@ -283,6 +283,16 @@ function recupera_post($post_type,$number_post){
     $posts = get_posts($args);
     return($posts);
 }
+function recupera_page($guia){
+    $args = array(
+                'post_type'  => 'page',
+                'showpost'   => 1,
+                'post_status'=> 'publish',
+                'menu_order' => $guia
+                );
+    $posts = get_posts($args);
+    return($posts);
+}
 function recupera_autor($id){
     global $wpdb;
         $consulta  = "SELECT * FROM wp_users WHERE ID = $id";

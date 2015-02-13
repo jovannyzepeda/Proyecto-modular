@@ -75,7 +75,7 @@ get_header();
 				<div class="servicios">
 					<h1>Nuestros Servicios.</h1>
 						<?php 
-						$result = recupera_post('servicios',-1);
+						$result = recupera_post('servicio',-1);
 						foreach ($result as $resultados) :
 							$image = recupera_post_attachments($resultados->ID);
 						?>
@@ -135,9 +135,35 @@ get_header();
 				?>
 				<!--fin de entradas-->
 			</div>
-		<?php
-		 	get_sidebar(); 
-		?>	
+			<?php 
+			$pagina = recupera_page(1); 
+			$image = recupera_imagen_destacada($pagina[0]->ID);
+			?>
+			<div class="amores">
+				<div class="amor">
+					<h4><?php echo $pagina[0]->post_title; ?></h4>
+					<img src="<?= $image; ?>"/>
+						<?php 
+						$result = recupera_post('mascotas',10);
+						foreach ($result as $resultados) :
+							$image = recupera_imagen_destacada($resultados->ID);
+						?>
+					  		<a href="<?= $resultados->guid; ?>">
+					  		<h5><?php echo $resultados->post_title ?></h5>
+					  		<p><?php echo get_post_meta($resultados->ID,'cf_Encuetro',true); ?></p>
+						  		<div class="informacion">
+						  			<img src="<?= $image; ?>"/>
+						  		</div>
+						  	</a>
+						<?php 
+						endforeach;
+						?>
+					  	
+				</div>
+				<?php
+				 	get_sidebar(); 
+				?>	
+			</div>
 		<div class="clearboth"></div>	
 		</div>
 	</div>	

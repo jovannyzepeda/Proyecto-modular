@@ -1,4 +1,4 @@
-<?php
+f<?php
 global $post;
 get_header();
 ?>
@@ -18,7 +18,7 @@ get_header();
 						?>
 					</p>
 						<?php 
-						$result = recupera_post('servicios',-1);
+						$result = recupera_post('servicio',-1);
 						foreach ($result as $resultados) :
 							$image = recupera_post_attachments($resultados->ID);
 						?>

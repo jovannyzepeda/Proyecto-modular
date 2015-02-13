@@ -19,7 +19,7 @@ class WPUF_Add_Post {
      */
     function shortcode( $atts ) {
 
-        extract( shortcode_atts( array('post_type' => 'post'), $atts ) );
+        extract( shortcode_atts( array('post_type' => 'mascotas'), $atts ) );
 
         ob_start();
 

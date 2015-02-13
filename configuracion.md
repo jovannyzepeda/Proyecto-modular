@@ -9,8 +9,9 @@ poner lo siguiente post_imag guardar cambios (este campo es para ingresar public
 
 en custom fields crear una nueva entrada dar el titulo que se desee, tomar un campo disponible del tipo image (titulo opcional) slug imagen_post y en la seccion donde dice post type desplegar y seleccionar la taxonomia creada anteriormente.
 
-crear una taxonomia mas con el nombre deseado y el slug servicios
+crear una taxonomia mas con el nombre deseado y el slug servicio
 (para registrar servicios) despues se crean los campos perzonalizados como en el paso anterior ,se arrastra el campo de imagen que esta creado desde el paso anterior, un campo linea simple con el slug precio_servicio y se guarda.
+
 
 crear taxonomia con nombre mapas y slug mapas , agregar campos de post dirigido a mapas en este se agrega un campo de correo con el slug correo un campo de telefono con el slug tel, en este poner multiples instancias activas por si se desea poner mas de un telefono activo y finalmente un campo de multiple linea  con el slug descripcion
 
@@ -19,7 +20,8 @@ Crear una pagina con el nombre que se desee y el slug servicios.
 Crear pagina con el nombre que se desee y el slug blog
 Crear una pagina con el nombre que se desee y el slug contacto.
 Crear una pagina con el nombre nosotros y el mismo slug(nombre con primer letra en mayuscula es lo que aparece en el nav)
-Crear pagina con el nombre que se desee y con el slug adoptame
+Crear pagina con el nombre que se desee y con el slug adoptame y en menu_order 1
+Crear pagina con nombre que se desee y slug registro
 
 
 /*plugins*/

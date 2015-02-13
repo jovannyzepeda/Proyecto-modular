@@ -42,10 +42,14 @@ get_header();
 								</p>
 							</div>
 							<div class="comentarios">
-								<h4>Comentarios</h4>
-								<hr>
-								<?php $commentarios = recupera_comentarios($resultados->ID);
+								<?php $bool = 1;
+									$commentarios = recupera_comentarios($resultados->ID);
 										foreach ($commentarios as $coment) :
+											if($bool==1&&$coment!=NULL){
+												echo "<h4>Comentarios</h4>
+													<hr>";
+												$bool=0;
+											}
 											$autor= recupera_autor($coment->user_id);
 										?>
 											<div class="mk-single-comment">
