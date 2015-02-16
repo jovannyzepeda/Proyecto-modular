@@ -327,10 +327,39 @@ get_header(); ?>
 			<div class="clearboth"></div>
 			</div>
 				<?php endwhile; ?>
-			<?php  if($single_layout != 'full') get_sidebar();  ?>
-			<?php
-				get_sidebar(); 
-			?>	
+			<?php 
+			$pagina = recupera_page(1); 
+			$image = recupera_imagen_destacada($pagina[0]->ID);
+			?>
+			<div class="amores">
+				<div class="amor">
+					<h4><?php echo $pagina[0]->post_title; ?></h4>
+					<img src="<?= $image; ?>"/>
+					<hr class="end_post">
+						<?php 
+						$result = recupera_post('mascotas',10);
+						foreach ($result as $resultados) :
+							$image = recupera_imagen_destacada($resultados->ID);
+						?>
+					  		<a href="<?= $resultados->guid; ?>">
+					  		<h5><?php echo $resultados->post_title ?></h5>
+					  		<p><?php echo get_post_meta($resultados->ID,'cf_Encuetro',true); ?></p>
+						  		<div class="informacion">
+						  			<img src="<?= $image; ?>";
+						  			onmouseover="this.src='http://3.bp.blogspot.com/-S_wJPIgYUS0/UgB8TYO0fNI/AAAAAAAADTY/USGeTAsKa20/s1600/imagenes-corazones+(3).jpg'";
+						  			onmouseout="this.src='<?= $image; ?>'";/>
+						  		</div>
+						  	</a>
+						  	<hr class="end_post">
+						<?php 
+						endforeach;
+						?>
+					  	
+				</div>
+				<?php
+				 	get_sidebar(); 
+				?>	
+			</div>
 			<div class="clearboth"></div>
 		</div>
 	</div>
