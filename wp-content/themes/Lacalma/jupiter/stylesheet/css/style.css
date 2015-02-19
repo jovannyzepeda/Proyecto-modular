@@ -447,6 +447,19 @@ div.contenedor{
 		margin-left: 20%;
 	}
 }
+
+button.mensaje_adopta{
+	border-radius: 50px;
+	border: 2px solid black!important;
+}
+button.mensaje_adopta.margin{
+	margin-left: 10%;
+}
+@media(max-width: 600px;){
+	button.mensaje_adopta.margin{
+		margin-top: 2%;
+	}
+}
 div.content_single{
 	padding: 5%;
 	background-repeat: no-repeat;
@@ -509,5 +522,76 @@ div.info.pet > p {
 }
 img.small.pet{
 	margin-right: 5px;
+}
+/*end*/
+/*css modales*/
+.modalmask {
+    position: fixed;
+    font-family: Arial, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+@media(min-width: 768px){
+	.modalmask{
+		width: 50%;
+		height: 300px;
+		margin-left: 25%;
+		margin-right: 25%;
+		margin-top: 10%;
+	}
+}
+div.modalbox > form > label {
+	float: left;
+	margin-left: 3%;
+	width: 100px;
+}
+@media(min-width: 768px){
+	input#correo{
+		height: 0px;
+		width: 45%;	
+	}
+}
+@media(max-width: 768px){
+	input#correo{
+		height: 0px;
+		width: 42%;	
+	}
+}
+input.enviar{
+	width: 100px!important;
+	margin-right: 35%;
+	margin-left: 35%;
+}
+div.modalbox > form > input{
+	width: 50%;
+	float: left;
+}
+.modalmask:target {
+    opacity:1;
+    pointer-events: auto;
+}
+a.close{
+	background-color: red;
+	opacity: inherit;
+	color: white;
+	margin-right: 5px;
+	margin-top: 5px;
+	font-size: 22px;
+	border-radius: 100px;
+	border: solid 2px white;
+}
+hr.limpia{
+	clear: both;
+	width: 0px;
+	margin: 0px;
 }
 /*end*/
