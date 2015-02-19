@@ -322,3 +322,7 @@ div.mascota_res > div > form > ul > li > textarea
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */ 
 }
 /*end */
+
+.mk-grid{
+	min-width: 100%!important;
+}
