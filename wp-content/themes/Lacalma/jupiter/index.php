@@ -77,7 +77,7 @@ get_header();
 						<?php 
 						$result = recupera_post('servicio',-1);
 						foreach ($result as $resultados) :
-							$image = recupera_post_attachments($resultados->ID);
+							$image = recupera_imagen_destacada($resultados->ID);
 						?>
 					  		<a href="<?= $resultados->guid; ?>">
 						  		<div class="post_servicio">
@@ -95,7 +95,7 @@ get_header();
 				<!--fin-->
 				<hr class="end_post">
 
-				<!--Ultimas 5 entradas publicadas-->
+				<!--Ultimas 6 entradas publicadas-->
 				<h1 class="publicaciones">
 					Ultimas Publicaciones
 				</h1>
@@ -109,7 +109,7 @@ get_header();
 						<?php 
 						$image = recupera_imagen_destacada($resultados->ID); 
 						?>
-						<a href="<?=  $resultados->guid; ?>">
+						<a href="#">
 							<img src="<?php echo $image; ?>" class="image_post"/>
 							<div class="content">
 								<h3>

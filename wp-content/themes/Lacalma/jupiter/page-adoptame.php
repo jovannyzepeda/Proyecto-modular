@@ -13,25 +13,51 @@ get_header();
 				?>
 				<div class="encuentros">
 					<div class="amor">
-						<h4><?php echo $pagina[0]->post_title; ?></h4>
-						<img src="<?= $imagen; ?>"/>
-						<hr class="end_post">
+						<?php  
+						    global $current_user;
+						    get_currentuserinfo();
+						    if($current_user->user_login==NULL):
+						        echo "<p class='center'>Necesitas Estar logeado para publicar una mascota...</p>";
+						    else :
+						    	$page = recupera_page(3);
+						?>
+						<a href="<?= $page[0]->guid; ?>">
+							<p><B>Publica tu mascota</B></p>
+						</a>
+						<?php 
+						endif; 
+						?>
+						<h4 class="center"><?php echo $pagina[0]->post_title; ?></h4>
+						<p class="center"><?php echo $pagina[0]->post_content; ?></p>
+						<hr class="mascotas_adoptivas">
 							<?php 
-							$result = recupera_post('mascotas',5);
+							$result = recupera_post('mascotas',-1);
+							$var = 0;
 							foreach ($result as $resultados) :
 								$image = recupera_imagen_destacada($resultados->ID);
 							?>
-						  		<a href="<?= $resultados->guid; ?>">
-						  		<h5><?php echo $resultados->post_title ?></h5>
-						  		<p><?php echo get_post_meta($resultados->ID,'cf_Encuetro',true); ?></p>
-							  		<div class="informacion">
-							  			<img src="<?= $image; ?>";
-							  			onmouseover="this.src='<?= $imagen; ?>'";
-							  			onmouseout="this.src='<?= $image; ?>'";/>
-							  		</div>
-							  	</a>
-							  	<hr class="end_post">
+								<div class="contenedor">
+							  		<a href="<?= $resultados->guid; ?>">
+								  		<div class="informacion">
+								  			<div class="item2">
+									  			<div class="filtro2">
+									  				<h5>Nombre: <?php echo $resultados->post_title ?></h5>
+								  					<hr class="encuentros">
+								  					<p>Encuetro: <?php echo get_post_meta($resultados->ID,'cf_Encuetro',true); ?></p>
+									  				<hr class="encuentros">
+									  				<p>Raza: <?php echo get_post_meta($resultados->ID,'cf_raza',true); ?></p>
+									  			</div>
+								  			</div>
+								  			<img src="<?= $image; ?>" class="img_love" />
+								  		</div>
+								  	</a>
+							  	</div>
+					
 							<?php 
+							$var ++;
+							if($var == 3){
+								echo "<hr class='mascotas_adoptivas'>";
+							}
 							endforeach;
 							?>
 					</div>

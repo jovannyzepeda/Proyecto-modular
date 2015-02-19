@@ -20,7 +20,7 @@ get_header();
 						<?php 
 						$result = recupera_post('servicio',-1);
 						foreach ($result as $resultados) :
-							$image = recupera_post_attachments($resultados->ID);
+							$image = recupera_imagen_destacada($resultados->ID);
 						?>
 					  		<a href="<?= $resultados->guid; ?>">
 						  		<div class="post_servicio">
