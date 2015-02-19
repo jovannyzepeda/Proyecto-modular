@@ -77,7 +77,7 @@ get_header();
 						<?php 
 						$result = recupera_post('servicio',-1);
 						foreach ($result as $resultados) :
-							$image = recupera_post_attachments($resultados->ID);
+							$image = recupera_imagen_destacada($resultados->ID);
 						?>
 					  		<a href="<?= $resultados->guid; ?>">
 						  		<div class="post_servicio">
@@ -95,7 +95,7 @@ get_header();
 				<!--fin-->
 				<hr class="end_post">
 
-				<!--Ultimas 5 entradas publicadas-->
+				<!--Ultimas 6 entradas publicadas-->
 				<h1 class="publicaciones">
 					Ultimas Publicaciones
 				</h1>
@@ -109,7 +109,7 @@ get_header();
 						<?php 
 						$image = recupera_imagen_destacada($resultados->ID); 
 						?>
-						<a href="<?=  $resultados->guid; ?>">
+						<a href="#">
 							<img src="<?php echo $image; ?>" class="image_post"/>
 							<div class="content">
 								<h3>
@@ -137,24 +137,33 @@ get_header();
 			</div>
 			<?php 
 			$pagina = recupera_page(1); 
-			$image = recupera_imagen_destacada($pagina[0]->ID);
+			$imagen = recupera_imagen_destacada($pagina[0]->ID);
 			?>
 			<div class="amores">
 				<div class="amor">
 					<h4><?php echo $pagina[0]->post_title; ?></h4>
-					<img src="<?= $image; ?>"/>
+					<img src="<?= $imagen; ?>"/>
+					<hr class="end_post">
 						<?php 
 						$result = recupera_post('mascotas',10);
 						foreach ($result as $resultados) :
 							$image = recupera_imagen_destacada($resultados->ID);
 						?>
 					  		<a href="<?= $resultados->guid; ?>">
-					  		<h5><?php echo $resultados->post_title ?></h5>
-					  		<p><?php echo get_post_meta($resultados->ID,'cf_Encuetro',true); ?></p>
 						  		<div class="informacion">
-						  			<img src="<?= $image; ?>"/>
+						  			<div class="item2">
+							  			<div class="filtro2">
+							  				<h5>Nombre: <?php echo $resultados->post_title ?></h5>
+						  					<hr class="encuentros">
+						  					<p>Encuetro: <?php echo get_post_meta($resultados->ID,'cf_Encuetro',true); ?></p>
+							  				<hr class="encuentros">
+							  				<p>Raza: <?php echo get_post_meta($resultados->ID,'cf_raza',true); ?></p>
+							  			</div>
+						  			</div>
+						  			<img src="<?= $image; ?>";/>
 						  		</div>
 						  	</a>
+						  	<hr class="end_post">
 						<?php 
 						endforeach;
 						?>

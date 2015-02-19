@@ -21,7 +21,7 @@ Crear pagina con el nombre que se desee y el slug blog
 Crear una pagina con el nombre que se desee y el slug contacto.
 Crear una pagina con el nombre nosotros y el mismo slug(nombre con primer letra en mayuscula es lo que aparece en el nav)
 Crear pagina con el nombre que se desee y con el slug adoptame y en menu_order 1
-Crear pagina con nombre que se desee y slug registro
+Crear pagina con nombre que se desee y slug registro y order 3
 
 
 /*plugins*/

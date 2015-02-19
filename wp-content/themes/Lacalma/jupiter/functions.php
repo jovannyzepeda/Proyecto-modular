@@ -258,13 +258,8 @@ class Theme
 add_filter('show_admin_bar', '__return_false');
 
 function recupera_post_attachments($post_id){
-    $args = array( 
-                'post_type'   => 'attachment',
-                'showpost'    => 1,
-                'post_parent' => $post_id
-                );
-    $attachments = get_posts($args);
-    return($attachments[0]->guid);
+    $attachments = get_post_meta($post_id,'wpcf-imagen',true);
+    return($attachments);
 }
 function recupera_imagen_destacada($post_id){
     $size = 'full';
@@ -275,7 +270,7 @@ function recupera_imagen_destacada($post_id){
 function recupera_post($post_type,$number_post){
     $args = array(
                 'post_type'  => $post_type,
-                'showpost'   => $number_post,
+                'posts_per_page'   => $number_post,
                 'post_status'=> 'publish',
                 'order'      => 'DES',
                 'orderby'    => 'post_date'
@@ -337,5 +332,47 @@ function recupera_tel_post($id){
                 echo " y ".$resultado[$x]->meta_value.".";
         }
     }
+}
+    /**
+     * @author jovanny zepeda <jovanny.zepeda@cor.mx>
+     *         crea un json con la informacion de una consulta 
+     *         en pagina blog
+     **/
+    function load(){
+        global $wpdb;
+        $mensaje = $_POST['mensaje'];
+        $post_id = $_POST['id_post'];
+        $autor   = $_POST['autor'];
+        $url     = $_POST['url'];
+        $email   = $_POST['email'];
+        $user    = $_POST['user'];
+        $date    = date("Y-m-d H:i:s");
+        $wpdb->insert(
+                'wp_comments',
+                array(
+                     'comment_post_ID'      => $post_id,
+                     'comment_author'       => $autor,
+                     'comment_author_email' => $email,
+                     'comment_author_url'   => $url,
+                     'comment_date'         => $date,
+                     'comment_date_gmt'     => $date,
+                     'comment_content'      => $mensaje,
+                     'comment_approved'     => 1,
+                     'comment_parent'       => 0,
+                     'user_id'              => $user     
+                ));
+
+        $data[] = $mensaje;
+        $data[] = $date;
+        $data[] = $autor;
+        $data[] = $url;
+        echo json_encode($data);
+        die();
+    }
+    add_action('wp_ajax_load', 'load');
+    add_action('wp_ajax_nopriv_load', 'load');
+function get_avatar_url($get_avatar){
+    preg_match("/src='(.*?)'/i", $get_avatar, $matches);
+    return $matches[1];
 }
 ?>
