@@ -11,6 +11,7 @@ get_header();
 		?>
 		<div class="clearboth"></div>
 		<p>La información sera de origen publico</p>
+		<p class="center">Y solo sera mostrada durante 45 días.</p>
 	</div>
 <?php
 get_footer();

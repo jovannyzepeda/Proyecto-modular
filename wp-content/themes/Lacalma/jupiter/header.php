@@ -252,7 +252,7 @@ if($toolbar_toggle == 'true' && $header_style != 4) : ?>
 
         do_action('header_search', 'toolbar'); 
         ?>
-        <a href="<?php echo WC()->cart->get_cart_url(); ?>" class="logo_carro"><i class="mk-moon-cart-plus"></i></a>
+        <a href="<?php echo WC()->cart->get_cart_url(); ?>" class="logo_carro"><i class="mk-moon-cart-plus fa-2x"></i></a>
         <?php
 
         do_action('header_social', 'toolbar');

@@ -32,14 +32,19 @@ get_header();
 
 						    <div class="item active">
 						        <img src="<?php echo $image; ?>">
-						        <div class="carousel-caption">
-						            <h3>
-						           		<?php echo $resultados->post_title; ?>
-						            </h3>
-						            <p>
-						            	<?php echo $resultados->post_content; ?>
-						            </p>
-						        </div>
+						        <?php
+						        if($resultados->post_content!="") : ?>
+							        <div class="carousel-caption">
+							            <h3>
+							           		<?php echo $resultados->post_title; ?>
+							            </h3>
+							            <p>
+							            	<?php echo $resultados->post_content; ?>
+							            </p>
+							        </div>
+						       <?php 
+						       endif;
+						       ?>
 						    </div>
 						    <?php 
 						    $first = false;

@@ -32,32 +32,37 @@ get_header();
 						<hr class="mascotas_adoptivas">
 							<?php 
 							$result = recupera_post('mascotas',-1);
+							$fecha = date('Y-m-j');
+							$nuevafecha = strtotime ( '-45 day' , strtotime ( $fecha ) ) ;
+							$nuevafecha = date ( 'Y-m-j' , $nuevafecha );
 							$var = 0;
 							foreach ($result as $resultados) :
-								$image = recupera_imagen_destacada($resultados->ID);
+								if($resultados->post_date >= $nuevafecha):
+									$image = recupera_imagen_destacada($resultados->ID);
 							?>
-								<div class="contenedor">
-							  		<a href="<?= $resultados->guid; ?>">
-								  		<div class="informacion">
-								  			<div class="item2">
-									  			<div class="filtro2">
-									  				<h5>Nombre: <?php echo $resultados->post_title ?></h5>
-								  					<hr class="encuentros">
-								  					<p>Encuetro: <?php echo get_post_meta($resultados->ID,'cf_Encuetro',true); ?></p>
-									  				<hr class="encuentros">
-									  				<p>Raza: <?php echo get_post_meta($resultados->ID,'cf_raza',true); ?></p>
+									<div class="contenedor">
+								  		<a href="<?= $resultados->guid; ?>">
+									  		<div class="informacion">
+									  			<div class="item2">
+										  			<div class="filtro2">
+										  				<h5>Nombre: <?php echo $resultados->post_title ?></h5>
+									  					<hr class="encuentros">
+									  					<p>Encuetro: <?php echo get_post_meta($resultados->ID,'cf_Encuetro',true); ?></p>
+										  				<hr class="encuentros">
+										  				<p>Raza: <?php echo get_post_meta($resultados->ID,'cf_raza',true); ?></p>
+										  			</div>
 									  			</div>
-								  			</div>
-								  			<img src="<?= $image; ?>" class="img_love" />
-								  		</div>
-								  	</a>
-							  	</div>
+									  			<img src="<?= $image; ?>" class="img_love" />
+									  		</div>
+									  	</a>
+								  	</div>
 					
 							<?php 
-							$var ++;
-							if($var == 3){
-								echo "<hr class='mascotas_adoptivas'>";
-							}
+									$var ++;
+									if($var == 3){
+										echo "<hr class='mascotas_adoptivas'>";
+									}
+								endif;
 							endforeach;
 							?>
 					</div>

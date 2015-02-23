@@ -4073,7 +4073,7 @@ body:not(.mk-boxed-enabled).dashboard-opened .sticky-style-fixed.header-style-3 
   transition: all 0.3s ease;
 }
 #mk-header-social ul li a i:before {
-  font-size: 16px;
+  font-size: 25px;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
@@ -22386,3 +22386,4 @@ div.wpcf7-validation-errors {
   background: #000;
   background: rgba(0, 0, 0, 0.8);
 }
+
