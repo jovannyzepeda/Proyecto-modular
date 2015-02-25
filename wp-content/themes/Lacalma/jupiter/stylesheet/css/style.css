@@ -101,8 +101,14 @@ button{
 	color: black!important;
 }
 div.mk-header-nav-container,button, section#mk-footer{
-	background-color: #01DF3A;
-}
+background: rgb(197,222,234); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(197,222,234,1) 0%, rgba(138,187,215,1) 0%, rgba(138,187,215,1) 31%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(197,222,234,1)), color-stop(0%,rgba(138,187,215,1)), color-stop(31%,rgba(138,187,215,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(197,222,234,1) 0%,rgba(138,187,215,1) 0%,rgba(138,187,215,1) 31%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(197,222,234,1) 0%,rgba(138,187,215,1) 0%,rgba(138,187,215,1) 31%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(197,222,234,1) 0%,rgba(138,187,215,1) 0%,rgba(138,187,215,1) 31%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(197,222,234,1) 0%,rgba(138,187,215,1) 0%,rgba(138,187,215,1) 31%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c5deea', endColorstr='#8abbd7',GradientType=0 ); /* IE6-9 */}
 
 #theme-page {
    background: #ffffff; /* Old browsers */
@@ -115,7 +121,13 @@ background: linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
 div.mk-header-toolbar, section.mk-footer{
-	background-color: #088A08;
+background: rgb(59,103,158); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(59,103,158,1) 0%, rgba(43,136,217,1) 50%, rgba(32,124,202,1) 51%, rgba(125,185,232,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(59,103,158,1)), color-stop(50%,rgba(43,136,217,1)), color-stop(51%,rgba(32,124,202,1)), color-stop(100%,rgba(125,185,232,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(59,103,158,1) 0%,rgba(43,136,217,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(59,103,158,1) 0%,rgba(43,136,217,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(59,103,158,1) 0%,rgba(43,136,217,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(59,103,158,1) 0%,rgba(43,136,217,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* W3C */
 }
 /*end*/
 /*css blog pesta;a*/
@@ -310,7 +322,7 @@ hr.mascotas_adoptivas {
 	width: 40%;
 	margin-left: 30%;
 	margin-right: 30%;
-	border: 2px solid rgb(205,235,139);
+	border: 2px solid rgb(109,179,242);
 	border-radius: 5px;
 }
 @media(min-width: 640px){
@@ -614,4 +626,7 @@ span.mk-footer-copyright {
 }
 section.widget.widget_facebook_like{
 float: right;
+}
+.mk-header-nav-container {
+	width: 100%!important;
 }
