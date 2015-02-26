@@ -375,4 +375,6 @@ function get_avatar_url($get_avatar){
     preg_match("/src='(.*?)'/i", $get_avatar, $matches);
     return $matches[1];
 }
+
+
 ?>
