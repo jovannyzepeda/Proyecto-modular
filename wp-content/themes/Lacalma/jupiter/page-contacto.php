@@ -16,6 +16,7 @@ get_header();
 						<h1>Tu opinión es muy importante para nosotros, 
 							envíanos tu mensaje.
 						</h1>
+						<hr class="separador">
 						<p>
 							<?php 
 								echo $post->post_content;
@@ -40,8 +41,8 @@ get_header();
 			<div class="amores">
 				<div class="amor">
 					<h4><?php echo $pagina[0]->post_title; ?></h4>
-					<img src="<?= $imagen; ?>"/>
-					<hr class="end_post">
+					<img src="<?= $imagen; ?>" class="adopcion"/>
+					<hr class="encuentros">
 						<?php 
 						$result = recupera_post('mascotas',2);
 						foreach ($result as $resultados) :
@@ -61,7 +62,7 @@ get_header();
 						  			<img src="<?= $image; ?>";/>
 						  		</div>
 						  	</a>
-						  	<hr class="end_post">
+						  	
 						<?php 
 						endforeach;
 						?>

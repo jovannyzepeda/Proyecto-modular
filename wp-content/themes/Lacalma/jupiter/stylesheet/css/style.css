@@ -22,6 +22,9 @@ div.informacion > img {
 div.amor > h4{
 	margin-bottom: 15px;
 }
+div.post{
+	max-width: 280px;
+}
 @media(min-width: 768px){
 	div.post > a > img.image_post{
 		width: 80%;
@@ -85,6 +88,7 @@ div.post_servicio > h4 , h1.publicaciones{
 }
 div.post_servicio > img {
 	height: 250px;
+	max-width: 250px;
 	border-radius: 20px;
 }
 
@@ -100,7 +104,7 @@ div.servicios > h1,h1.publicaciones{
 button{
 	color: black!important;
 }
-div.mk-header-nav-container,button, section#mk-footer{
+div.mk-header-nav-container,button, section#mk-footer, div.mk-header-bg{
 background: rgb(197,222,234); /* Old browsers */
 background: -moz-linear-gradient(top, rgba(197,222,234,1) 0%, rgba(138,187,215,1) 0%, rgba(138,187,215,1) 31%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(197,222,234,1)), color-stop(0%,rgba(138,187,215,1)), color-stop(31%,rgba(138,187,215,1))); /* Chrome,Safari4+ */
@@ -264,7 +268,7 @@ h2#mapas{
 	}
 	aside#mk-sidebar {
 		width: 20%;
-		float: left;
+		float: left!important;
 	}
 }
 @media(max-width: 768px){
@@ -325,6 +329,7 @@ hr.mascotas_adoptivas {
 	margin-right: 30%;
 	border: 2px solid rgb(109,179,242);
 	border-radius: 5px;
+	clear: both;
 }
 @media(min-width: 640px){
 	.mascota_res {
@@ -426,7 +431,7 @@ hr.encuentros {
 	border: 2px solid blueviolet;
 	border-radius: 10px;
 }
-h4.center , p.center{
+h4.center , p.center, h2.center{ 
 	text-align: center;
 }
 /*fin*/
@@ -626,7 +631,7 @@ span.mk-footer-copyright {
 	}
 }
 section.widget.widget_facebook_like{
-float: right;
+
 }
 .mk-header-nav-container {
 	width: 100%!important;
@@ -639,4 +644,85 @@ div#sub-footer{
 	background: -o-linear-gradient(top, rgba(59,103,158,1) 0%,rgba(43,136,217,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* Opera 11.10+ */
 	background: -ms-linear-gradient(top, rgba(59,103,158,1) 0%,rgba(43,136,217,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* IE10+ */
 	background: linear-gradient(to bottom, rgba(59,103,158,1) 0%,rgba(43,136,217,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* W3C */
+}
+section#facebook-like-2{
+	padding 0px;
+	overflow: inherit;
+}
+/*cliente*/
+@media(min-width: 768px){
+    div.align_left {
+        float: right;
+        width: 50%;
+    }
+    div.align_right {
+        float: left;
+        width: 50%;
+    }
+}
+hr.separador {
+/* width: 100px; */
+	width: 40%;
+	margin-left: 30%;
+	margin-right: 30%;
+	border: 2px solid rgb(109,179,242);
+	border-radius: 5px;
+}
+div.align_right {
+    border: 2px dotted rgb(59,103,158);
+    background-color: #E0ECF8;
+}
+@media(max-width: 960px){
+	div.amores{
+		width: 100%;
+	}
+	div.informacion{
+		float: left;
+		margin: 15px;
+	}
+	div.post_servicio,div.post{
+		width: 250px;
+		float: left;
+		margin-right: 30px;
+		margin-left: 30px;
+		
+
+	}
+	div.post > a >img.image_post{
+		height: 220px;
+	}
+	img.adopcion{
+		width: 50%;
+		margin-right:25%;
+		margin-left: 25%; 
+	}
+}
+div.informacion{
+	float: left;
+	margin: 15px;
+}
+h2.center{
+	margin-top: 20px;
+}
+td.actions > input.button{
+	float: right!important;
+	clear: both;
+}
+input.button,a.checkout-button{
+
+	background-color: #5ba0d0!important;
+}
+#coupon_code.input-text{
+	height: 35px;
+}
+/*end*/
+
+p.publica{
+	padding: 10px;
+	background-color: aliceblue;
+	border: 2px solid;
+	margin: 10px;
+}
+p.publica:hover{
+	background-color: #5ba0d0;
 }

@@ -10,7 +10,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 ?>
 <div class="mk-shop-header">
-<h4><?php _e('ALL PRODUCTS', 'mk_framework'); ?></h4>
+<h4><?php _e('Todos los Productos', 'mk_framework'); ?></h4>
 <form class="woocommerce-ordering" method="get">
 	<select name="orderby" class="orderby">
 		<?php foreach ( $catalog_orderby_options as $id => $name ) : ?>

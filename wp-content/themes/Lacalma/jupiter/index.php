@@ -52,14 +52,19 @@ get_header();
 						    ?>
 						    <div class="item">
 						        <img src="<?php echo $image; ?>">
-						        <div class="carousel-caption">
-						            <h3>
-						           		<?php echo $resultados->post_title; ?>
-						            </h3>
-						            <p>
-						            	<?php echo $resultados->post_content; ?>
-						            </p>
-						        </div>
+						        <?php
+						        if($resultados->post_content!="") : ?>
+							        <div class="carousel-caption">
+							            <h3>
+							           		<?php echo $resultados->post_title; ?>
+							            </h3>
+							            <p>
+							            	<?php echo $resultados->post_content; ?>
+							            </p>
+							        </div>
+						        <?php 
+						       endif;
+						       ?>
 						    </div>
 					    <?php
 					    	endif; 
@@ -79,6 +84,7 @@ get_header();
 				<!--Servicios-->
 				<div class="servicios">
 					<h1>Nuestros Servicios.</h1>
+					<hr class="separador">
 						<?php 
 						$result = recupera_post('servicio',-1);
 						foreach ($result as $resultados) :
@@ -104,6 +110,7 @@ get_header();
 				<h1 class="publicaciones">
 					Ultimas Publicaciones
 				</h1>
+				<hr class="separador">
 				<hr>
 				<?php
 				$result = recupera_post('post',6);
@@ -147,8 +154,8 @@ get_header();
 			<div class="amores">
 				<div class="amor">
 					<h4><?php echo $pagina[0]->post_title; ?></h4>
-					<img src="<?= $imagen; ?>"/>
-					<hr class="end_post">
+					<img src="<?= $imagen; ?>" class="adopcion"/>
+					<hr class="encuentros">
 						<?php 
 						$result = recupera_post('mascotas',10);
 						foreach ($result as $resultados) :
@@ -168,7 +175,7 @@ get_header();
 						  			<img src="<?= $image; ?>";/>
 						  		</div>
 						  	</a>
-						  	<hr class="end_post">
+						  	
 						<?php 
 						endforeach;
 						?>

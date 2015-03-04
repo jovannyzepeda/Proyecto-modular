@@ -13,7 +13,7 @@ get_header();
 				<h1 class="publicaciones">
 					Nuestro Espacio Para Tu Mejor Amigo.
 				</h1>
-				<hr>
+				<hr class="separador">
 				<?php
 				$result = recupera_post('post',-1);
 				$values = 1;
@@ -104,7 +104,7 @@ get_header();
 							endif;
 							?>
 					</div>
-					<hr class='end_post'/>
+					<hr class="separador"/>
 				<?php
 				$values ++;
 				endforeach;
@@ -122,8 +122,8 @@ get_header();
 			<div class="amores">
 				<div class="amor">
 					<h4><?php echo $pagina[0]->post_title; ?></h4>
-					<img src="<?= $imagen; ?>"/>
-					<hr class="end_post">
+					<img src="<?= $imagen; ?>"class="adopcion"/>
+					<hr class="encuentros">
 						<?php 
 						$result = recupera_post('mascotas',20);
 						foreach ($result as $resultados) :
@@ -143,7 +143,7 @@ get_header();
 						  			<img src="<?= $image; ?>";/>
 						  		</div>
 						  	</a>
-						  	<hr class="end_post">
+						  	
 						<?php 
 						endforeach;
 						?>

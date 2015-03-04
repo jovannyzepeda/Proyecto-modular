@@ -22,7 +22,7 @@ get_header();
 						    	$page = recupera_page(3);
 						?>
 						<a href="<?= $page[0]->guid; ?>">
-							<p><B>Publica tu mascota</B></p>
+							<p class = "publica"><B>Publica tu mascota</B></p>
 						</a>
 						<?php 
 						endif; 
@@ -67,6 +67,7 @@ get_header();
 							?>
 					</div>
 				</div>
+				<hr class='mascotas_adoptivas'>
 				<?php
 				 	get_sidebar(); 
 				?>	

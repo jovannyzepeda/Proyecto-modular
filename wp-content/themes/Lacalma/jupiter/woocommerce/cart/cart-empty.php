@@ -13,8 +13,8 @@ wc_print_notices();
 
 ?>
 
-<h4 class="cart-empty"><?php _e( 'Your cart is currently empty.', 'mk_framework' ) ?></h4>
+<h4 class="cart-empty"><?php _e( 'Tu carrito esta vació. Presiona el botón y visita nuestra tienda.', 'mk_framework' ) ?></h4>
 
 <?php do_action( 'woocommerce_cart_is_empty' ); ?>
 
-<p class="return-to-shop"><a class="shop-flat-btn shop-black-btn" href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>"><?php _e( 'Return To Shop', 'mk_framework' ) ?></a></p>
+<p class="return-to-shop"><a class="shop-flat-btn shop-black-btn" href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>"><?php _e( 'Ir a la tienda', 'mk_framework' ) ?></a></p>

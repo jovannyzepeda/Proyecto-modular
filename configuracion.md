@@ -44,3 +44,8 @@ activarlo , install woocomerce pages
 /*fin*/
 
 para permitir usuarios multiples usar la configuradion del menu herramientas general habilitar como suscriptores
+
+
+
+agregar una pagina con el nombre que se desee pero slug cliente
+crear un post type del tipo cliente con imagen destacada comentario

@@ -16,6 +16,7 @@ get_header();
 						<h1>
 							Quienes somos...
 						</h1>
+						<hr class="separador">
 						<p>
 							<?php 
 								echo $post->post_content;
@@ -24,6 +25,7 @@ get_header();
 						<h2 id='mapas'>
 							Veterinarias en Servicio
 						</h2>
+						<hr class="separador">
 						<?php $mapa = recupera_post('mapas',-1); 
 							foreach ($mapa as $maps) :
 							?>
@@ -63,8 +65,8 @@ get_header();
 			<div class="amores">
 				<div class="amor">
 					<h4><?php echo $pagina[0]->post_title; ?></h4>
-					<img src="<?= $imagen; ?>"/>
-					<hr class="end_post">
+					<img src="<?= $imagen; ?>"class="adopcion"/>
+					<hr class="encuentros">
 						<?php 
 						$result = recupera_post('mascotas',2);
 						foreach ($result as $resultados) :
@@ -84,7 +86,7 @@ get_header();
 						  			<img src="<?= $image; ?>";/>
 						  		</div>
 						  	</a>
-						  	<hr class="end_post">
+						  	
 						<?php 
 						endforeach;
 						?>

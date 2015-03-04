@@ -137,7 +137,7 @@ else { ?>
 echo $out_of_stock_badge;
 
 if ($product->is_on_sale()) :
- echo apply_filters('woocommerce_sale_flash', '<span class="mk-onsale">'.__( 'Sale', 'mk_framework' ).'</span>', $post, $product);
+ echo apply_filters('woocommerce_sale_flash', '<span class="mk-onsale">'.__( '!OFERTA', 'mk_framework' ).'</span>', $post, $product);
 endif;
 
 
